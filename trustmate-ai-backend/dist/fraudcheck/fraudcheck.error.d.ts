@@ -1,0 +1,31 @@
+export declare enum FraudCheckError {
+    NOT_FOUND = "FRAUD_CHECK_NOT_FOUND",
+    FORBIDDEN = "FORBIDDEN_ACCESS_TO_FRAUD_CHECK",
+    INVALID_ID = "INVALID_FRAUD_CHECK_ID",
+    CREATE_FAILED = "FAILED_TO_CREATE_FRAUD_CHECK",
+    FETCH_FAILED = "FAILED_TO_FETCH_FRAUD_CHECKS",
+    UPDATE_FAILED = "FAILED_TO_UPDATE_FRAUD_CHECK",
+    DELETE_FAILED = "FAILED_TO_DELETE_FRAUD_CHECK",
+    ANALYSIS_FAILED = "FAILED_TO_ANALYZE_TRANSACTION",
+    INVALID_RISK_SCORE = "INVALID_RISK_SCORE_VALUE",
+    DUPLICATE_TRANSACTION = "DUPLICATE_TRANSACTION_CHECK",
+    STATS_FAILED = "FAILED_TO_FETCH_STATISTICS"
+}
+export declare const FraudCheckErrorMessages: {
+    FRAUD_CHECK_NOT_FOUND: string;
+    FORBIDDEN_ACCESS_TO_FRAUD_CHECK: string;
+    INVALID_FRAUD_CHECK_ID: string;
+    FAILED_TO_CREATE_FRAUD_CHECK: string;
+    FAILED_TO_FETCH_FRAUD_CHECKS: string;
+    FAILED_TO_UPDATE_FRAUD_CHECK: string;
+    FAILED_TO_DELETE_FRAUD_CHECK: string;
+    FAILED_TO_ANALYZE_TRANSACTION: string;
+    INVALID_RISK_SCORE_VALUE: string;
+    DUPLICATE_TRANSACTION_CHECK: string;
+    FAILED_TO_FETCH_STATISTICS: string;
+};
+export declare class FraudCheckException extends Error {
+    code: FraudCheckError;
+    details?: any | undefined;
+    constructor(code: FraudCheckError, message?: string, details?: any | undefined);
+}
