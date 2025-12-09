@@ -1,0 +1,37 @@
+export declare enum ReceiptError {
+    NOT_FOUND = "RECEIPT_NOT_FOUND",
+    FORBIDDEN = "FORBIDDEN_ACCESS_TO_RECEIPT",
+    INVALID_ID = "INVALID_RECEIPT_ID",
+    CREATE_FAILED = "FAILED_TO_CREATE_RECEIPT",
+    FETCH_FAILED = "FAILED_TO_FETCH_RECEIPTS",
+    UPDATE_FAILED = "FAILED_TO_UPDATE_RECEIPT",
+    DELETE_FAILED = "FAILED_TO_DELETE_RECEIPT",
+    UPLOAD_FAILED = "FAILED_TO_UPLOAD_RECEIPT_IMAGE",
+    PROCESS_FAILED = "FAILED_TO_PROCESS_RECEIPT",
+    ANALYSIS_FAILED = "FAILED_TO_ANALYZE_RECEIPT",
+    INVALID_FILE_TYPE = "INVALID_FILE_TYPE",
+    FILE_TOO_LARGE = "FILE_TOO_LARGE",
+    OCR_FAILED = "OCR_PROCESSING_FAILED",
+    STATS_FAILED = "FAILED_TO_FETCH_STATISTICS"
+}
+export declare const ReceiptErrorMessages: {
+    RECEIPT_NOT_FOUND: string;
+    FORBIDDEN_ACCESS_TO_RECEIPT: string;
+    INVALID_RECEIPT_ID: string;
+    FAILED_TO_CREATE_RECEIPT: string;
+    FAILED_TO_FETCH_RECEIPTS: string;
+    FAILED_TO_UPDATE_RECEIPT: string;
+    FAILED_TO_DELETE_RECEIPT: string;
+    FAILED_TO_UPLOAD_RECEIPT_IMAGE: string;
+    FAILED_TO_PROCESS_RECEIPT: string;
+    FAILED_TO_ANALYZE_RECEIPT: string;
+    INVALID_FILE_TYPE: string;
+    FILE_TOO_LARGE: string;
+    OCR_PROCESSING_FAILED: string;
+    FAILED_TO_FETCH_STATISTICS: string;
+};
+export declare class ReceiptException extends Error {
+    code: ReceiptError;
+    details?: any | undefined;
+    constructor(code: ReceiptError, message?: string, details?: any | undefined);
+}
